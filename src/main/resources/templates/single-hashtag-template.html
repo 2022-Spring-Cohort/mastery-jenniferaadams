@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Single Hashtag</title>
+  <link rel="icon" href="/assets/icon.png">
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/layout.css" />
+</head>
+
+<body>
+<div class="container">
+  <header class="header">
+    <h1 class="header__title">Surviving Coding Boot Camp</h1>
+    <nav class="header__nav">
+      <div class="header__nav-item"><a href="/" class="header__nav-link">Home</a></div>
+      <div class="header__nav-item"><a href="/hashtags" class="header__nav-link">Hashtags</a></div>
+    </nav>
+  </header>
+  <main class="main-content">
+    <section class="main-content__topics topics">
+      <h2 class="topics__title main-content__title" th:text="${hashtag.hashtag}"></h2>
+      <ul class="PostsList">
+        <li th:each="post: ${hashtag.posts}"><a th:text="${post.title}" th:href="'/posts/'+${post.id}"></a></li>
+      </ul>
+
+<!--    <ul>-->
+<!--      <li th:each="currentPost: ${hashtag.posts}"><a th:href="'/single-post-template/' + ${currentPost.postId}"></a></li>-->
+<!--    </ul>-->
+<!--      th:href="'/single-post-template/'+${post.postId}" th:text="${post.post}"-->
+    </section>
+  </main>
+</div>
+
+</body>

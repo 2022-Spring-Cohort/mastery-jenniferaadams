@@ -42,3 +42,9 @@ a{
 a:hover{
     color: var(--light-highlight);
 }
+.HashtagsList {
+    list-style-type: none;
+}
+.PostsList {
+    list-style-type: none;
+}
